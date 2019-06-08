@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+  <title>WORD COUNT</title>
+</head>
+<body>
+    <header>
+      <div class="p-3 mb-2 bg-info text-white">
+      <h3 class="text-center"py-2 mb-0>COUNT</h3>
+    </div>
+    </header>
+    <section class="bg-light border-bottom py-3">
+      <div class="container">
+      <article class="d-inline-block align-middle mb-1 mb-3 profile-text">
+        <h1 class="font-weight-bold mb-0 profile-h1">Likelion First Django Assignment</h1>
+      </article>
+    </div>
+</section>
+</body>
+<section class="container">
+  <section class="container">
+    <article class="d-inline-block align-middle mb-1 mb-3 profile-text">
+        <h1>당신이 입력한 텍스트는 {{ total }} 단어로 구성되어 있습니다.</h1>
+        <br>
+        
+        <h1>입력한 텍스트: </h1>
+       <h3> {{ fulltext }} </h3>
+        <br>
+        <h1>단어 카운트:</h1>
+        {% for word, countTotal in dictionary %}
+        {{ word }} : {{ countTotal }}번 나옴<br>
+        {% endfor %}
+       <br>
+        <a href="{% url 'home' %}"target="_blank" style="color:rgb(223, 11, 223)"><h3> 다시하기</h3></a><h7> 다른 문장을 검색해보고 싶으시면 눌러보세요.</h7><br>
+    </article>
+    </section>
+
